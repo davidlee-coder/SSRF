@@ -25,22 +25,32 @@ Successful exploitation can lead to:
 #### Step 1: Initial Request Analysis
 Upon clicking the "Check stock" button on the product details page, the application sends a POST request to `/product/stock` with the `stockApi` parameter. This parameter contains a URL that the server uses to fetch stock information.
 
-![Intercepting the initial stock check request](image-11.png)
+<img width="1358" height="681" alt="image" src="https://github.com/user-attachments/assets/bb9a7fea-4efc-4641-b776-780abdfab310" />
+<img width="1354" height="682" alt="image" src="https://github.com/user-attachments/assets/2842f73e-231f-476f-9bf3-54feb797c37e" />
+
+<p align="center"></i></p>
+<br><br>
 
 #### Step 2: Decoding the URL
 The `stockApi` parameter is URL-encoded. Decoding it reveals the internal endpoint being accessed: `http://192.168.0.1:8080/product/stock/check?productId=1&storeId=1`. This confirms that the application is fetching data from an internal system.
 
-![URL-decoded stockApi parameter](image-12.png)
+<img width="1029" height="635" alt="image" src="https://github.com/user-attachments/assets/7067fb6b-a168-4402-bdf0-6493a8b17c6d" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 3: Testing Internal Access
 Modifying the IP address in the `stockApi` parameter to `192.168.0.1` results in an HTTP 400 Bad Request response, indicating an invalid or unreachable internal host.
 
-![Testing access to internal IP 192.168.0.1](image-13.png)
+<img width="920" height="615" alt="image" src="https://github.com/user-attachments/assets/22261ed7-83e8-49d4-a788-520957568d14" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 4: Identifying Valid Internal IPs
 Changing the IP to `192.168.0.12` yields an HTTP 500 Internal Server Error. This status code suggests that the server successfully processed the modified `stockApi` parameter and attempted to connect to the specified internal IP, but the connection failed due to an invalid or unresponsive back-end system.
 
-![Response from internal IP 192.168.0.12](image-14.png)
+<img width="1040" height="683" alt="image" src="https://github.com/user-attachments/assets/f724695b-128b-49c1-8c1f-ecacd68f11f1" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 5: Automated Scanning
 To efficiently identify valid internal IP addresses, a custom Go script was developed to scan the `192.168.0.x` range. The script targets the admin endpoint on port 8080 and checks for non-500 status codes, which indicate successful connections.
@@ -117,27 +127,37 @@ func main() {
 
 Execute the script using: `go run ssrf.go`
 
-![Terminal output from running the Go scanning script](image-15.png)
+<img width="1361" height="728" alt="image" src="https://github.com/user-attachments/assets/391e61ec-46fe-477a-983e-8d469eabd05b" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 6: Accessing Administrative Functions
 Once valid internal IPs are identified, appending `/admin` to the URL allows access to administrative endpoints.
 
-![Appending /admin to the internal URL](image-16.png)
+<img width="1032" height="649" alt="image" src="https://github.com/user-attachments/assets/e4cf78ff-f95d-4d1b-ad01-387e5456af39" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 7: Retrieving Admin Data
 The server successfully fetches and returns data from the internal admin endpoint, demonstrating unauthorized access to sensitive resources.
 
-![Request to the internal admin endpoint](image-17.png)
+<img width="503" height="458" alt="image" src="https://github.com/user-attachments/assets/34e5297e-2769-4063-a2f4-ddeaab10e055" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 8: Confirming Full Access
 The response contains admin panel data, confirming the exploitation's success.
 
-![Response with admin panel data](image-18.png)
+<img width="1014" height="616" alt="image" src="https://github.com/user-attachments/assets/ee3537e9-82c6-43b8-a473-87d2e090ddf7" />
+<p align="center"></i></p>
+<br><br>
 
 #### Step 9: Lab Completion
 The vulnerability exploitation is verified, and the lab is marked as solved.
 
-![Lab solved confirmation](image-19.png)
+<img width="1349" height="682" alt="image" src="https://github.com/user-attachments/assets/61c22aba-6644-44ab-af84-177507d347c9" />
+<p align="center"></i></p>
+<br><br>
 
 ### Mitigation
 
