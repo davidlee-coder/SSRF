@@ -172,7 +172,7 @@ The vulnerability exploitation is verified, and the lab is marked as solved.
 
 - **Burp Suite Community Edition**: For intercepting and modifying HTTP requests.
 - **Go Programming Language**: For writing custom automation scripts.
-- **PortSwigger Web Security Academy**: Lab environment for practicing SSRF vulnerabilities.
+- **PortSwigger Web Security Academy**: [Lab environment for practicing SSRF vulnerabilities.](https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system)
 
 ### Conclusion
 
