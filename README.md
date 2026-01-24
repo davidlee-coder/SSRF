@@ -2,15 +2,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Security Research](https://img.shields.io/badge/Security-Research-blue.svg)](https://github.com/yourusername/web-shell-race-condition)
 
-A detailed analysis and demonstration of a Time-of-Check to Time-of-Use (TOCTOU) race condition vulnerability in web file upload mechanisms, leading to remote code execution (RCE). This project serves as a professional portfolio piece showcasing vulnerability research, exploitation techniques, and security best practices.
-
 ## Table of Contents
 
 - [Overview](#overview)
-- [Root Cause Analysis](#root-cause-analysis)
+- [Root Cause Analysis](#root-cause)
 - [Impact](#impact)
 - [Exploitation](#exploitation-assessment)
-- [Mitigation Strategies](#mitigation-strategies)
+- [Mitigation](#mitigation)
 - [Tools and Resources](#tools-and-resources)
 - [Conclusion](#conclusion)
 
