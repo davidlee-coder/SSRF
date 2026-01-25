@@ -140,7 +140,7 @@ func main() {
 }
 ```
 
-Execute the script using: `go run ssrf.go`
+I executed the script using: `go run ssrf.go`
 
 <img width="1361" height="728" alt="image" src="https://github.com/user-attachments/assets/391e61ec-46fe-477a-983e-8d469eabd05b" />
 <p align="center"></i></p>
