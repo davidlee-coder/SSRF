@@ -5,6 +5,7 @@
 # Table of Contents
 
 - [Overview](#overview)
+- [My "Aha" Moment](#my-aha-moment)
 - [Root Cause Analysis](#root-cause)
 - [Impact](#impact)
 - [Exploitation](#exploitation-assessment)
