@@ -2,6 +2,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Security Research](https://img.shields.io/badge/Security-Research-blue.svg)](https://github.com/yourusername/web-shell-race-condition)
 
+**Level** — Apprentice<p align="center"></i></p>
+<br>
+
+**Category** — SSRF<p align="center"></i></p>
+<br>
+**PortSwigger Link** — [https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system](https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system)<p align="center"></i></p>
+<br>
+**Completed** — February 7 2026<p align="center"></i></p>
+<br>
+**Tools** — Burp Repeater (For modification), Go Programming Language (For writing custom automation scripts)<p align="center"></i></p>
+<br>
 # Table of Contents
 
 - [Overview](#overview)
